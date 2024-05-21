@@ -18,11 +18,11 @@ public class Enemy extends Actor
     public void act()
     {
         // Add your action code here.
-        
+        attackTimer.mark();
         if(attackTimer.millisElapsed() < 1000)
         {
             Attack attack = new Attack();
-            world.addObject(attack, getX()+1, getY()+1);
+            world.addObject(attack, getX(), getY());
         }
     }
     
