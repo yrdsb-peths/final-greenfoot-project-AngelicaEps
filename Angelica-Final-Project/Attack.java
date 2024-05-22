@@ -15,11 +15,18 @@ public class Attack extends Actor
     public void act()
     {
         // Add your action code here.
-        setLocation(getX(),getY()+3);
+        setLocation(getX(),getY()-3);
         
         MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
+        if(isTouching(Enemy.class))
+            {
+                removeTouching(Enemy.class);
+                world.newEnemy();
+            }
+            
+        if(getY() < 0)
         {
+            
             world.removeObject(this);
         }
     }

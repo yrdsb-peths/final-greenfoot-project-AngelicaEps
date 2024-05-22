@@ -22,7 +22,7 @@ public class Enemy extends Actor
         if(attackTimer.millisElapsed() < 1000)
         {
             Attack attack = new Attack();
-            world.addObject(attack, getX(), getY());
+            
         }
     }
     

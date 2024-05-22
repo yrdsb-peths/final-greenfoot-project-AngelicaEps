@@ -20,6 +20,12 @@ public class MyWorld extends World
         Player player = new Player();
         addObject(player, 300, 300);
         newEnemy();
+        if(Greenfoot.isKeyDown("Space"))
+        {
+            Attack attack = new Attack();
+            addObject(attack, player.getX()+1, player.getY()-1);
+        }
+        
     }
     public void newEnemy()
     {
