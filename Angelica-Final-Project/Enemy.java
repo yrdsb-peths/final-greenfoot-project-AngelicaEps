@@ -14,18 +14,18 @@ public class Enemy extends Actor
      */
     MyWorld world = (MyWorld) getWorld();
     SimpleTimer attackTimer = new SimpleTimer();
-    int enemyMove = 2;
+    int enemyMove = 1;
     public void act()
     {
         // Add your action code here.
         setLocation(getX() + enemyMove, getY());
         if((getX() > 590) || (getX() < 10))
         {
-            enemyMove = -2;
+            enemyMove = -1;
         }
         if((getX() < 10))
         {
-            enemyMove = 2;
+            enemyMove = 1;
         }
         attackTimer.mark();
         if(attackTimer.millisElapsed() < 1000)
