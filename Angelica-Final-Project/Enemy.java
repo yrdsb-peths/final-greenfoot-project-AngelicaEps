@@ -14,24 +14,24 @@ public class Enemy extends Actor
      */
     MyWorld world = (MyWorld) getWorld();
     SimpleTimer attackTimer = new SimpleTimer();
-    int enemyMove = 1;
+    int enemyMove = 2;
     public void act()
     {
         // Add your action code here.
         setLocation(getX() + enemyMove, getY());
         if((getX() > 590) || (getX() < 10))
         {
-            enemyMove = -1;
+            enemyMove = -2;
         }
         if((getX() < 10))
         {
-            enemyMove = 1;
+            enemyMove = 2;
         }
-        attackTimer.mark();
-        if(attackTimer.millisElapsed() < 1000)
+        
+        if(attackTimer.millisElapsed() > 1000)
         {
-            Attack attack = new Attack();
-            
+            getWorld().addObject(new enemyAttack(), getX(), getY());
+            attackTimer.mark();
         }
     }
     
