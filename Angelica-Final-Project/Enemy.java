@@ -15,6 +15,9 @@ public class Enemy extends Actor
     MyWorld world = (MyWorld) getWorld();
     SimpleTimer attackTimer = new SimpleTimer();
     int enemyMove = 2;
+    int minAttack = 500;
+    int attackGap = 5000;
+    int randomAttack = Greenfoot.getRandomNumber(attackGap) + minAttack;
     public void act()
     {
         // Add your action code here.
@@ -28,10 +31,11 @@ public class Enemy extends Actor
             enemyMove = 2;
         }
         
-        if(attackTimer.millisElapsed() > 1000)
+        if(attackTimer.millisElapsed() > (randomAttack))
         {
             getWorld().addObject(new enemyAttack(), getX(), getY());
             attackTimer.mark();
+            randomAttack = Greenfoot.getRandomNumber(attackGap);
         }
     }
     
