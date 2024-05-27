@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    Label lifeLabel;
+    public int lives = 3;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -16,16 +18,19 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(600, 400, 1); 
         Player player = new Player();
         addObject(player, 300, 300);
+        lifeLabel = new Label(0, 80);
+        addObject(lifeLabel, 50, 50);
+        lifeLabel.setValue(lives);
         newEnemy();
         if(Greenfoot.isKeyDown("Space"))
         {
             Attack attack = new Attack();
             addObject(attack, player.getX()+1, player.getY()-1);
         }
-        
     }
     public void newEnemy()
     {
@@ -42,5 +47,4 @@ public class MyWorld extends World
         }
         addObject(enemy,x, y);
     }
-    
 }

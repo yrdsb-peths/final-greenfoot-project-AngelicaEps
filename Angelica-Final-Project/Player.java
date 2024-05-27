@@ -44,7 +44,10 @@ public class Player extends Actor
             world.addObject(attack, getX(), getY());
             attackTimer.mark();
         }
-        
+        if(isTouching(enemyAttack.class))
+        {
+            removeTouching(enemyAttack.class);
+        }
         
     }
 }
