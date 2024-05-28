@@ -25,7 +25,10 @@ public class enemyAttack extends Actor
                 if(world.lives == 0)
                 {
                     removeTouching(Player.class);
+                    LoseScreen gameOver = new LoseScreen();
+                    Greenfoot.setWorld(gameOver);
                 }
+                
             }
         
         if(getY() == 399)
