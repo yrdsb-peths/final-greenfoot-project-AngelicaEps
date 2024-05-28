@@ -20,8 +20,7 @@ public class enemyAttack extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(isTouching(Player.class))
             {
-                world.lives = world.lives -1;
-                world.lifeLabel.setValue(world.lives);
+                
                 if(world.lives == 0)
                 {
                     removeTouching(Player.class);

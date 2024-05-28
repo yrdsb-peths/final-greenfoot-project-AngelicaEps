@@ -47,6 +47,8 @@ public class Player extends Actor
         if(isTouching(enemyAttack.class))
         {
             removeTouching(enemyAttack.class);
+            world.lives = world.lives -1;
+            world.lifeLabel.setValue(world.lives);
         }
         
     }
