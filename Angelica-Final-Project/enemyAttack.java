@@ -18,17 +18,6 @@ public class enemyAttack extends Actor
         setLocation(getX(),getY()+4);
         
         MyWorld world = (MyWorld) getWorld();
-        if(isTouching(Player.class))
-            {
-                
-                if(world.lives == 0)
-                {
-                    removeTouching(Player.class);
-                    LoseScreen gameOver = new LoseScreen();
-                    Greenfoot.setWorld(gameOver);
-                }
-                
-            }
         
         if(getY() == 399)
         {

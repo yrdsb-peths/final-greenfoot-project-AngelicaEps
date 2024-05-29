@@ -26,8 +26,8 @@ public class LoseScreen extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            LevelSelect levelSelect = new LevelSelect();
+            Greenfoot.setWorld(levelSelect);
         }
     }
     /**
@@ -36,7 +36,7 @@ public class LoseScreen extends World
      */
     private void prepare()
     {
-        Label label = new Label("Press Space to Try Again", 50);
+        Label label = new Label("Press Space to Return to Menu", 50);
         addObject(label,275,311);
         label.setLocation(306,298);
     }

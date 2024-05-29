@@ -21,12 +21,10 @@ public class Attack extends Actor
         if(isTouching(Enemy.class))
             {
                 removeTouching(Enemy.class);
-                world.newEnemy();
             }
             
         if(getY() == 0)
         {
-            
             world.removeObject(this);
         }
     }

@@ -49,6 +49,12 @@ public class Player extends Actor
             removeTouching(enemyAttack.class);
             world.lives = world.lives -1;
             world.lifeLabel.setValue(world.lives);
+            if(world.lives == 0)
+                {
+                    removeTouching(Player.class);
+                    LoseScreen gameOver = new LoseScreen();
+                    Greenfoot.setWorld(gameOver);
+                }
         }
         
     }
