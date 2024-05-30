@@ -30,7 +30,6 @@ public class Enemy extends Actor
         {
             enemyMove = 2;
         }
-        
         if(attackTimer.millisElapsed() > (randomAttack))
         {
             getWorld().addObject(new enemyAttack(), getX(), getY());

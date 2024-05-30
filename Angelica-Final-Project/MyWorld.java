@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label lifeLabel;
+    Label scoreLabel;
     public int lives = 3;
-    
+    public int score = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,6 +26,9 @@ public class MyWorld extends World
         lifeLabel = new Label(0, 80);
         addObject(lifeLabel, 50, 50);
         lifeLabel.setValue(lives);
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 550, 50);
+        scoreLabel.setValue(score);
         if(Greenfoot.isKeyDown("Space"))
         {
             Attack attack = new Attack();

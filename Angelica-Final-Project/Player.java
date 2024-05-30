@@ -18,8 +18,6 @@ public class Player extends Actor
     {
         // Add your action code here.
         
-        
-        
         MyWorld world = (MyWorld) getWorld();
         if(Greenfoot.isKeyDown("a"))
         {
