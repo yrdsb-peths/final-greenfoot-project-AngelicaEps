@@ -15,14 +15,26 @@ public class LevelOne extends MyWorld
      */
     public LevelOne()
     {
-        newEnemy();
-        newEnemy();
-        newEnemy();
-        
-        if(score == 2)
+        if(score == 0)
         {
-            LevelSelect levelSelect = new LevelSelect();
-            Greenfoot.setWorld(levelSelect);
+            newEnemy();
+            newEnemy();
+            newEnemy();
+        }
+    }
+    public void act()
+    {
+        if(score == 3)
+        {
+            score++;
+            newEnemy();
+            newEnemy();
+            newEnemy();
+        }
+        if(score == 7)
+        {
+            LevelClear levelClear = new LevelClear();
+            Greenfoot.setWorld(levelClear);
         }
     }
 }

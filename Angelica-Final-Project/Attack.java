@@ -22,7 +22,6 @@ public class Attack extends Actor
             {
                 removeTouching(Enemy.class);
                 world.score = world.score +1;
-                world.scoreLabel.setValue(world.score);
             }
             
         if(getY() == 0)

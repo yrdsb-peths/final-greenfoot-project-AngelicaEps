@@ -26,9 +26,6 @@ public class MyWorld extends World
         lifeLabel = new Label(0, 80);
         addObject(lifeLabel, 50, 50);
         lifeLabel.setValue(lives);
-        scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 550, 50);
-        scoreLabel.setValue(score);
         if(Greenfoot.isKeyDown("Space"))
         {
             Attack attack = new Attack();
