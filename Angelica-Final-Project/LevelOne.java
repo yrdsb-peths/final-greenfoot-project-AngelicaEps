@@ -15,6 +15,7 @@ public class LevelOne extends MyWorld
      */
     public LevelOne()
     {
+        //first wave of enemies
         if(score == 0)
         {
             newEnemy();
@@ -24,6 +25,7 @@ public class LevelOne extends MyWorld
     }
     public void act()
     {
+        //when first wave is defeated, spawns in the second wave
         if(score == 3)
         {
             score++;
@@ -31,6 +33,7 @@ public class LevelOne extends MyWorld
             newEnemy();
             newEnemy();
         }
+        //when all enemies are defeated switches to a different screen
         if(score == 7)
         {
             LevelClear levelClear = new LevelClear();

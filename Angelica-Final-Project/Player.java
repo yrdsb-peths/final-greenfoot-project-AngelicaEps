@@ -19,6 +19,7 @@ public class Player extends Actor
         // Add your action code here.
         
         MyWorld world = (MyWorld) getWorld();
+        //this code allows the player to move using the wasd keys 
         if(Greenfoot.isKeyDown("a"))
         {
             move(-3);
@@ -35,13 +36,14 @@ public class Player extends Actor
         {
             setLocation(getX(),getY()+3);
         }
-        
+        //this code makes it so that there is a small gap between player's attacks
         if(Greenfoot.isKeyDown("Space") && attackTimer.millisElapsed() > 250)
         {
             Attack attack = new Attack();
             world.addObject(attack, getX(), getY());
             attackTimer.mark();
         }
+        //this code makes it so that if the player is touching the enemy's attacks, the amount of lives will decrease
         if(isTouching(enemyAttack.class))
         {
             removeTouching(enemyAttack.class);

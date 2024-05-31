@@ -18,6 +18,7 @@ public class Attack extends Actor
         setLocation(getX(),getY()-4);
         
         MyWorld world = (MyWorld) getWorld();
+        //removes enemy if play attack hits enemy
         if(isTouching(Enemy.class))
             {
                 removeTouching(Enemy.class);

@@ -17,11 +17,25 @@ public class Enemy extends Actor
     int enemyMove = 2;
     int minAttack = 500;
     int attackGap = 5000;
+    
     int randomAttack = Greenfoot.getRandomNumber(attackGap) + minAttack;
+    
     public void act()
     {
         // Add your action code here.
         setLocation(getX() + enemyMove, getY());
+        enemyMove();
+        //this code makes the enemy's attack randomised 
+        if(attackTimer.millisElapsed() > (randomAttack))
+        {
+            getWorld().addObject(new enemyAttack(), getX(), getY());
+            attackTimer.mark();
+            randomAttack = Greenfoot.getRandomNumber(attackGap);
+        }
+    }
+    //this method makes the enemy move across the screen right and left to make it harder to hit
+    public void enemyMove()
+    {
         if((getX() > 590) || (getX() < 10))
         {
             enemyMove = -2;
@@ -29,12 +43,6 @@ public class Enemy extends Actor
         if((getX() < 10))
         {
             enemyMove = 2;
-        }
-        if(attackTimer.millisElapsed() > (randomAttack))
-        {
-            getWorld().addObject(new enemyAttack(), getX(), getY());
-            attackTimer.mark();
-            randomAttack = Greenfoot.getRandomNumber(attackGap);
         }
     }
     
