@@ -16,14 +16,13 @@ public class Attack extends Actor
     {
         // Add your action code here.
         setLocation(getX(),getY()-4);
-        
         MyWorld world = (MyWorld) getWorld();
         //removes enemy if play attack hits enemy
         if(isTouching(Enemy.class))
-            {
-                removeTouching(Enemy.class);
-                world.score = world.score +1;
-            }
+        {
+            removeTouching(Enemy.class);
+            world.score = world.score +1;
+        }
             
         if(getY() == 0)
         {
