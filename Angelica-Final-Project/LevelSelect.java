@@ -39,7 +39,11 @@ public class LevelSelect extends World
             LevelThree levelThree = new LevelThree();
             Greenfoot.setWorld(levelThree);
         }
-        
+        if(Greenfoot.isKeyDown("4"))
+        {
+            Infinite infinite = new Infinite();
+            Greenfoot.setWorld(infinite);
+        }
     }
     
     /**
@@ -64,5 +68,19 @@ public class LevelSelect extends World
         label4.setLocation(465,166);
         Label label5 = new Label("Press space to attack and w a s d to move.", 30);
         addObject(label5,293,353);
+        Label label6 = new Label("Press 4 for an infinite mode", 50);
+        addObject(label6,281,263);
+        label6.setLocation(306,263);
+        Label label7 = new Label("Number on the left is lives, number on the right is score.", 20);
+        addObject(label7,277,307);
+        label7.setLocation(296,304);
+        label7.setLocation(296,309);
+        label7.setLocation(287,379);
+        label7.setLocation(419,377);
+        label7.setLocation(333,374);
+        label7.setLocation(337,379);
+        label7.setLocation(252,373);
+        label7.setLocation(410,382);
+        label7.setLocation(296,375);
     }
 }

@@ -9,9 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label lifeLabel;
+    Label scoreLabel;
     public int lives = 3;
     //score int tracks the number of enemies defeated so that multiple waves can be created
     public int score = 0;
+    public int displayScore = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -27,6 +29,9 @@ public class MyWorld extends World
         lifeLabel = new Label(0, 80);
         addObject(lifeLabel, 50, 50);
         lifeLabel.setValue(lives);
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 550, 50);
+        scoreLabel.setValue(displayScore);
         //allows player to shoot
         if(Greenfoot.isKeyDown("Space"))
         {
