@@ -19,7 +19,7 @@ public class Enemy extends Actor
     int attackGap = 5000;
     
     int randomAttack = Greenfoot.getRandomNumber(attackGap) + minAttack;
-    
+    GreenfootSound laser = new GreenfootSound("laser.mp3");
     public void act()
     {
         // Add your action code here.
@@ -31,6 +31,7 @@ public class Enemy extends Actor
             getWorld().addObject(new enemyAttack(), getX(), getY());
             attackTimer.mark();
             randomAttack = Greenfoot.getRandomNumber(attackGap);
+            laser.play();
         }
     }
     //this method makes the enemy move across the screen right and left to make it harder to hit

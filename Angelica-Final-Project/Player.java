@@ -13,7 +13,7 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     SimpleTimer attackTimer = new SimpleTimer();
-    
+    GreenfootSound laser = new GreenfootSound("laser.mp3");
     public void act()
     {
         // Add your action code here.
@@ -42,6 +42,7 @@ public class Player extends Actor
             Attack attack = new Attack();
             world.addObject(attack, getX(), getY());
             attackTimer.mark();
+            laser.play();
         }
         //this code makes it so that if the player is touching the enemy's attacks, the amount of lives will decrease
         if(isTouching(enemyAttack.class))
