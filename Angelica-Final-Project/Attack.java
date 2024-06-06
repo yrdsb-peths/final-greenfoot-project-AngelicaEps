@@ -25,7 +25,6 @@ public class Attack extends Actor
             world.displayScore++;
             world.scoreLabel.setValue(world.displayScore);
         }
-            
         if(getY() == 0)
         {
             world.removeObject(this);

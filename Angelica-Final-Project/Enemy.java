@@ -14,9 +14,9 @@ public class Enemy extends Actor
      */
     MyWorld world = (MyWorld) getWorld();
     SimpleTimer attackTimer = new SimpleTimer();
-    int enemyMove = 2;
-    int minAttack = 500;
-    int attackGap = 5000;
+    static int enemyMove = 2;
+    static int minAttack = 500;
+    static int attackGap = 5000;
     
     int randomAttack = Greenfoot.getRandomNumber(attackGap) + minAttack;
     GreenfootSound laser = new GreenfootSound("laser.mp3");
@@ -39,11 +39,11 @@ public class Enemy extends Actor
     {
         if((getX() > 590) || (getX() < 10))
         {
-            enemyMove = -2;
+            enemyMove = enemyMove - (2*enemyMove);
         }
         if((getX() < 10))
         {
-            enemyMove = 2;
+            enemyMove = enemyMove;
         }
     }
     
