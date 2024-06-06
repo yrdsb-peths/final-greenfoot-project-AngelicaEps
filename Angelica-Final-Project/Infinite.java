@@ -15,6 +15,9 @@ public class Infinite extends MyWorld
      */
     public Infinite()
     {
+        Enemy.attackGap = 5000;
+        Enemy.enemyMove = 2;
+        Enemy.minAttack = 500;
         if(score == 0)
         {
             newEnemy();

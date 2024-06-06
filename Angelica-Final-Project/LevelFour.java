@@ -1,23 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class LevelTwo here.
+ * Write a description of class LevelFour here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LevelTwo extends MyWorld
+public class LevelFour extends MyWorld
 {
-
+    
     /**
-     * Constructor for objects of class LevelTwo.
+     * Constructor for objects of class LevelFour.
      * 
      */
-    public LevelTwo()
+    public LevelFour()
     {
-        Enemy.attackGap = 5000;
-        Enemy.enemyMove = 2;
-        Enemy.minAttack = 500;
+        //this level is the same as level 2 but the enemy attacks and moves faster
+        Enemy.attackGap = 2500;
+        Enemy.enemyMove = 3;
+        Enemy.minAttack = 250;
         if(score == 0)
         {
             newEnemy();
