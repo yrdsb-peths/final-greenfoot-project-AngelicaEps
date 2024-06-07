@@ -14,28 +14,73 @@ public class Player extends Actor
      */
     SimpleTimer attackTimer = new SimpleTimer();
     GreenfootSound laser = new GreenfootSound("laser.mp3");
+    
+    GreenfootImage[] moveRight = new GreenfootImage[4];
+    GreenfootImage[] moveLeft = new GreenfootImage[4];
+    int imageIndex = 0;
+    
+    String facing = "right";
+    SimpleTimer animationTimer = new SimpleTimer();
+    public Player()
+    {
+        for(int i = 0; i < moveRight.length; i++)
+        {
+            moveRight[i] = new GreenfootImage("images/shipmove/ship" + i + ".png");
+            moveRight[i].scale(60,60);
+        }
+        
+        for(int i = 0; i < moveLeft.length;i++)
+        {
+            moveLeft[i] = new GreenfootImage("images/shipmove/ship" + i + ".png");
+            moveLeft[i].mirrorHorizontally();
+            moveLeft[i].scale(60,60);
+        }
+        animationTimer.mark();
+    }
+    public void animate()
+    {
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return; 
+        }
+        animationTimer.mark();
+        if(facing.equals("right"))
+        {
+            setImage(moveRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % moveRight.length;
+        }
+        else
+        {
+            setImage(moveLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % moveLeft.length;
+        }
+    }
     public void act()
     {
         // Add your action code here.
-        
         MyWorld world = (MyWorld) getWorld();
         //this code allows the player to move using the wasd keys 
         if(Greenfoot.isKeyDown("a"))
         {
             move(-3);
+            facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
             move(3);
+            facing = "right";
         }
         else if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(),getY()-3);
+            setImage(moveRight[0]);
         }
         else if(Greenfoot.isKeyDown("s"))
         {
             setLocation(getX(),getY()+3);
+            setImage(moveRight[0]);
         }
+        animate();
         //this code makes it so that there is a small gap between player's attacks
         if(Greenfoot.isKeyDown("Space") && attackTimer.millisElapsed() > 250)
         {
