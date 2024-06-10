@@ -39,20 +39,23 @@ public class Player extends Actor
     }
     public void animate()
     {
-        if(animationTimer.millisElapsed() < 100)
+        if(animationTimer.millisElapsed() < 500)
         {
             return; 
         }
         animationTimer.mark();
         if(facing.equals("right"))
         {
-            setImage(moveRight[imageIndex]);
-            imageIndex = (imageIndex + 1) % moveRight.length;
+            setImage(moveRight[3]);
         }
-        else
+        else if(facing.equals("left"))
         {
-            setImage(moveLeft[imageIndex]);
-            imageIndex = (imageIndex + 1) % moveLeft.length;
+            setImage(moveLeft[3]);
+        }
+        else 
+        {
+            setImage(moveRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % 2;
         }
     }
     public void act()
@@ -73,12 +76,12 @@ public class Player extends Actor
         else if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(),getY()-3);
-            setImage(moveRight[0]);
+            facing = "up";
         }
         else if(Greenfoot.isKeyDown("s"))
         {
             setLocation(getX(),getY()+3);
-            setImage(moveRight[0]);
+            facing = "down";
         }
         animate();
         //this code makes it so that there is a small gap between player's attacks
