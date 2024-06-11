@@ -44,6 +44,11 @@ public class LevelSelect extends World
             LevelFour levelFour = new LevelFour();
             Greenfoot.setWorld(levelFour);
         }
+        if(Greenfoot.isKeyDown("5"))
+        {
+            LevelFive levelFive = new LevelFive();
+            Greenfoot.setWorld(levelFive);
+        }
         if(Greenfoot.isKeyDown("6"))
         {
             Infinite infinite = new Infinite();
