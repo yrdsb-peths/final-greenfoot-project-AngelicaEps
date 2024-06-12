@@ -44,6 +44,7 @@ public class Player extends Actor
             return; 
         }
         animationTimer.mark();
+        //switches photo shown based off of directon the player is facing
         if(facing.equals("right"))
         {
             setImage(moveRight[3]);

@@ -24,6 +24,7 @@ public class LoseScreen extends World
     }
     public void act()
     {
+        //switches to level selection screen
         if(Greenfoot.isKeyDown("space"))
         {
             LevelSelect levelSelect = new LevelSelect();

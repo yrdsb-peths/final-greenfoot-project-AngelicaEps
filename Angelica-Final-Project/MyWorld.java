@@ -29,6 +29,7 @@ public class MyWorld extends World
         lifeLabel = new Label(0, 80);
         addObject(lifeLabel, 50, 50);
         lifeLabel.setValue(lives);
+        //adds a label for the score
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 550, 50);
         scoreLabel.setValue(displayScore);

@@ -24,6 +24,7 @@ public class LevelSelect extends World
 
     public void act()
     {
+        //changes level based on key pressed
         if(Greenfoot.isKeyDown("1"))
         {
             LevelOne levelOne = new LevelOne();

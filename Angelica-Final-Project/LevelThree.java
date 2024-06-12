@@ -18,6 +18,7 @@ public class LevelThree extends MyWorld
         Enemy.attackGap = 5000;
         Enemy.enemyMove = 2;
         Enemy.minAttack = 500;
+        //spawns in first wave of enemies
         if(score == 0)
         {
             newEnemy();

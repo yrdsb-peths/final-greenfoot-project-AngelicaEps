@@ -22,6 +22,7 @@ public class LevelClear extends World
     }
     public void act()
     {
+        //switches to level select screen
         if(Greenfoot.isKeyDown("space"))
         {
             LevelSelect levelSelect = new LevelSelect();

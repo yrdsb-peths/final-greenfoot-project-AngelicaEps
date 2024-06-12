@@ -19,6 +19,7 @@ public class LevelFour extends MyWorld
         Enemy.attackGap = 2500;
         Enemy.enemyMove = 3;
         Enemy.minAttack = 250;
+        //spawns in first wave of enemies
         if(score == 0)
         {
             newEnemy();
