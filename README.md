@@ -1,6 +1,7 @@
 # Final Greenfoot Project
-This is the README.md file.
 
-Consider using **Markdown** syntax to format the text in this file. [Markdown basics](https://www.markdownguide.org/getting-started/)
+Extraterrestrial Attackers
 
+This is a game that is inspired by Space Invaders, there are 5 levels that you can go through and an infinite mode that will continuously spawn enemies. 
+The controls for this game are wasd to move and space to shoot. 
 
